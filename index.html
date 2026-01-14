@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detección y Reducción de Estrés - Colegio Dolores Sucre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e0f7fa, #f1f8e9); /* Gradiente suave azul-verde */
+            color: #333;
+            transition: background 0.5s ease;
+        }
+        .contenedor-principal {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .gif-superior {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            background: url('giff.gif') no-repeat center center;
+            background-size: cover;
+            z-index: 999;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .gif-superior.oculto {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        .navegacion {
+            background-color: #4ecdc4; 
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in;
+            position: relative;
+            z-index: 1000; 
+        }
+        .navegacion a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .navegacion a:hover {
+            color: #ff6b6b; 
+            transform: scale(1.1);
+        }
+        .seccion {
+            display: none;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: slideIn 0.5s ease-out;
+        }
+        .seccion.activa {
+            display: block;
+        }
+        .saludo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        .ocultar {
+            display: none;
+        }
+        h1, h2 {
+            color: #2e7d32; 
+            animation: fadeInUp 0.8s ease-out;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .minijuego {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .minijuego button {
+            padding: 10px 20px;
+            background-color: #4ecdc4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .minijuego button:hover {
+            background-color: #45b7aa;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .imagen-subtema {
+    float: right;
+    width: 250px;
+    height: auto;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.limpiar-float {
+    clear: both;
+}
+    </style>
+</head>
+<body>
+    <div id="saludo" class="saludo oculto">
+        <p id="mensaje-saludo"></p>
+    </div>
+    <div class="gif-superior" id="gif-superior"></div>
+    <div class="contenedor-principal" id="contenido-principal" style="display: none;">
+        <header>
+            <br><br><br><br><br><br><br><br><h1>Detección y Reducción de Niveles de Estrés en Estudiantes de 3ro de Bachillerato - Colegio Dolores Sucre</h1>
+            <nav class="navegacion">
+                <a href="#inicio" onclick="mostrarSeccion('inicio')">inicio</a>
+                <a href="#senales-fisiologicas" onclick="mostrarSeccion('senales-fisiologicas')">señales fisiológicas</a>
+                <a href="#indicadores-emocionales" onclick="mostrarSeccion('indicadores-emocionales')">indicadores emocionales</a>
+                <a href="#estrategias-reduccion" onclick="mostrarSeccion('estrategias-reduccion')">estrategias de reducción de estrés</a>
+                <a href="#glosario" onclick="mostrarSeccion('glosario')">glosario</a>
+                <a href="#minijuegos" onclick="mostrarSeccion('minijuegos')">minijuegos</a>
+            </nav>
+        </header>
+        <main>
+            <section id="inicio" class="seccion activa">
+                <h2>Inicio</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/X9IRbMoYOQk?si=nAYLwklVHAlMOP_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>El estrés es una respuesta natural del cuerpo ante situaciones desafiantes, pero cuando se vuelve crónico, puede afectar negativamente el desempeño académico de los estudiantes. En esta página, exploraremos cómo detectar y reducir los niveles de estrés en estudiantes de 3ro de bachillerato del Colegio Dolores Sucre. Aprenderemos sobre señales fisiológicas, indicadores emocionales y estrategias efectivas para manejarlo.</p>
+            </section>
+            <section id="senales-fisiologicas" class="seccion">
+                <h2>Señales Fisiológicas</h2>
+                                 <img src="img2.png" class="imagen-subtema" alt="señales">
+                <p>Las señales fisiológicas son manifestaciones físicas del estrés. Algunos ejemplos incluyen:</p>
+                <ul>
+                    <li>Dolor de cabeza frecuente.</li>
+                    <li>Insomnio o dificultades para dormir.</li>
+                    <li>Fatiga crónica.</li>
+                    <li>Problemas digestivos como náuseas o dolor de estómago.</li>
+                    <li>Tensión muscular, especialmente en el cuello y hombros.</li>
+                    <p>🔹 Síntomas fisiológicos físicos<br>
+
+Estos son cambios en el cuerpo que ocurren cuando se activa la respuesta de estrés (sistema nervioso y hormonas):<br>
+
+1. Sistema cardiovascular:
+
+Aumento de la frecuencia cardíaca (palpitaciones, taquicardia).
+
+Aumento de la presión arterial.<br>
+
+2. Sistema musculoesquelético:
+
+Tensión muscular, dolor o rigidez en cuello, hombros y espalda.
+
+Temblor o sacudidas corporales leves.<br>
+
+3. Respiratorio:
+
+Respiración más rápida o dificultad para respirar.<br>
+
+4. Respuesta cutánea:
+
+Sudoración excesiva, especialmente en manos y pies.
+
+Piel pálida por constricción de vasos.<br>
+
+5. Sistema digestivo:
+
+Molestias estomacales: dolor, náuseas, indigestión, diarrea o estreñimiento.
+
+Cambios de apetito (aumento o disminución).<br>
+
+6. Otras reacciones corporales:
+
+Sequedad en la boca.<br>
+
+Dolores de cabeza frecuentes (por tensión).
+
+Fatiga o sensación de agotamiento.</p>
+                </ul>
+                <p>Si experimentas estas señales, es importante buscar formas de relajarte y consultar con un profesional si persisten.</p>
+            </section>
+            <section id="indicadores-emocionales" class="seccion">
+                <h2>Indicadores Emocionales</h2>
+                  <img src="img1.png" class="imagen-subtema" alt="indicadores">
+                <p>Los indicadores emocionales del estrés afectan el estado de ánimo y el comportamiento. Incluyen:</p>
+                <ul>
+                    <li>Irritabilidad o enojo frecuente.</li>
+                    <li>Ansiedad o preocupación constante.</li>
+                    <li>Tristeza o depresión.</li>
+                    <li>Dificultad para concentrarse.</li>
+                    <li>Sentimientos de abrumamiento.</li>
+                </ul>
+                
+            <p>Reconocer estos indicadores es el primer paso para gestionar el estrés de manera efectiva.</p>
+            <p>🧠 Indicadores emocionales comunes del estrés<br>
+
+1. Irritabilidad o cambios de humor
+Las personas bajo estrés suelen mostrarse más irritables, con menor tolerancia a la frustración o con cambios bruscos de humor.<br>
+
+2. Ansiedad o preocupación excesiva
+Sentir preocupación persistente, nerviosismo o anticipación negativa es un indicador emocional fuerte del estrés.<br>
+
+3. Sensación de agobio o incapacidad para afrontar
+Una persona estresada puede sentir que no puede manejar sus tareas o emociones, sensación de “estar sobrepasado”.<br>
+
+4. Baja tolerancia emocional
+Mayor susceptibilidad a sentir tristeza, frustración o enojo incluso por estímulos menores.<br>
+
+5. Ansiedad anticipatoria
+Preocupación continuada por eventos futuros o consecuencias, incluso sin evidencia concreta.
+Fuente: National Institute of Mental Health.</p>
+        </section>
+            <section id="estrategias-reduccion" class="seccion">
+                <h2>Estrategias de Reducción de Estrés</h2>
+                                 <img src="img3.png" class="imagen-subtema" alt="estrategias">
+                <p>Existen varias estrategias para reducir el estrés. Aquí algunas efectivas:</p>
+                <ul>
+                    <li>Ejercicio físico regular, como caminar o practicar deportes.</li>
+                    <li>Técnicas de relajación, como meditación o respiración profunda.</li>
+                    <li>Organización del tiempo y establecimiento de prioridades.</li>
+                    <li>Hablar con amigos, familiares o un consejero.</li>
+                    <li>Actividades recreativas, como hobbies o escuchar música.</li>
+                </ul>
+                <p>Reducir el estrés es importante para la salud física y emocional, y hay evidencias claras de por qué hacerlo mejora la calidad de vida. A continuación te explico los motivos respaldados por fuentes confiables:<br>
+
+🧠 1. Mejora la salud mental:
+
+El estrés crónico está vinculado a altos niveles de ansiedad, tristeza persistente y agotamiento emocional.
+Reducir el estrés ayuda a estabilizar el estado de ánimo y disminuye el riesgo de desarrollar trastornos de ansiedad o depresión.
+<br>
+
+❤️ 2. Protege el corazón y la presión arterial:
+
+Cuando el cuerpo está estresado, libera hormonas como adrenalina que aumentan la frecuencia cardíaca y la presión arterial.
+El estrés prolongado puede elevar el riesgo de hipertensión y enfermedades cardiovasculares.
+<br>
+
+💪 3. Fortalece el sistema inmunológico:
+
+El estrés prolongado debilita el sistema inmunológico, haciendo al cuerpo más vulnerable a infecciones y enfermedades.
+Reducir el estrés puede mejorar la respuesta inmunitaria.
+<br>
+
+🧠 4. Mejora la concentración y la memoria:
+
+El estrés crónico afecta funciones cognitivas como la atención y la memoria.
+Reducirlo puede ayudar a pensar con claridad y a rendir mejor en tareas diarias.
+</p>
+                <p>Implementa estas estrategias en tu rutina diaria para mejorar tu bienestar.</p>
+            </section>
+            <section id="glosario" class="seccion">
+                <h2>Glosario</h2>
+                <ul>
+                    <li><strong>Estrés:</strong> Respuesta del cuerpo a presiones o demandas.</li>
+                    <li><strong>Ansiedad:</strong> Sentimiento de preocupación o miedo intenso.</li>
+                    <li><strong>Meditación:</strong> Práctica de concentración mental para reducir el estrés.</li>
+                    <li><strong>Respiración profunda:</strong> Técnica para calmar el sistema nervioso.</li>
+                    <li><strong>Desempeño académico:</strong> Rendimiento en actividades escolares.</li>
+                </ul>
+
+            </section>
+            <section id="minijuegos" class="seccion">
+                <h2>Minijuegos</h2>
+                <div>
+          <iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/27345192-tecnicas_para_reducir_el_estres.html"></iframe>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        const tiempoSaludo = 2000; 
+        const mensajeBienvenida = "Bienvenid@, ";
+
+        let nombreUsuario = "";
+        let elementoSaludo = document.getElementById("saludo");
+        let mensajeSaludo = document.getElementById("mensaje-saludo");
+        let contenidoPrincipal = document.getElementById("contenido-principal");
+        let gifSuperior = document.getElementById("gif-superior");
+
+
+        function mostrarSaludo() {
+            nombreUsuario = prompt("Ingresa tu nombre:");
+            if (nombreUsuario) {
+                mensajeSaludo.textContent = mensajeBienvenida + nombreUsuario;
+                elementoSaludo.classList.remove("ocultar");
+                setTimeout(() => {
+                    elementoSaludo.classList.add("ocultar");
+                    contenidoPrincipal.style.display = "block";
+                }, tiempoSaludo);
+            } else {
+                mostrarSaludo();
+            }
+        }
+
+
+        function mostrarSeccion(idSeccion) {
+            let secciones = document.querySelectorAll(".seccion");
+            secciones.forEach(seccion => seccion.classList.remove("activa"));
+            document.getElementById(idSeccion).classList.add("activa");
+        }
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 100) { 
+                gifSuperior.classList.add("ocultar");
+            } else {
+                gifSuperior.classList.remove("ocultar");
+            }
+        });
+        window.onload = mostrarSaludo;
+    </script>
+</body>
+</html>
